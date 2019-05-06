@@ -15,19 +15,13 @@ const httpOptions = {
 
 export class UsersService {
 
-  private usersUrl = 'api/users';
-
   constructor( private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+  getAll() {
+    return this.http.get<User[]>('user');
   }
 
-  getUser(id: number): Observable<User> {
-    return this.http.get<User>(`${this.usersUrl}/${id}`);
-  }
-
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, user, httpOptions);
+  create(user: User) {
+    return this.http.post('/user', user, httpOptions);
   }
 }

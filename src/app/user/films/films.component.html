@@ -1,3 +1,34 @@
-<p>
-  films works!
-</p>
+<form #cityForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <h4>Оберіть місто:</h4>
+    <mat-form-field>
+    <mat-label>Місто</mat-label>
+      <select matNativeControl [(ngModel)]="selectedCity" [formControl]="cityControl" required (change)="changeCity($event.target.value)">
+        <option></option>
+        <option *ngFor ="let count of cityList" [value]="count.city">{{count.viewCity}} </option>
+      </select>
+      <mat-error *ngIf="cityControl.hasError('required')">Будь-ласка, оберіть місто</mat-error>
+    </mat-form-field>
+    <p class="text-cinema"> Обране місто: {{selectedCity | json}}</p>
+  </div>
+
+  <div>
+    <h4>Оберіть кінотеатр:</h4>
+    <mat-form-field>
+    <mat-label>Кінотеатр</mat-label>
+      <select matNativeControl [(ngModel)]="selectedCinema" [formControl]="cinemaControl" required>
+        <option></option>
+        <option *ngFor ="let cinema of cinemas" [value]="cinema">{{cinema}}</option>
+      </select>
+      <mat-error *ngIf="cinemaControl.hasError('required')">Будь-ласка, оберіть кінотеатр</mat-error>
+    </mat-form-field>
+    <p class="text-cinema"> Обраний кінотеатр: {{selectedCinema | json}}</p>
+  </div>
+
+  <button type="submit" class="button" [disabled]="!cityControl.valid || !cinemaControl.valid">Пошук</button>
+
+</form>
+
+<div *ngIf="payLoad">
+  <strong>Following values</strong><br>{{payLoad}}
+</div>

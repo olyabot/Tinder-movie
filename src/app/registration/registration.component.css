@@ -4,8 +4,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: #aaa;
-  height: 450px;
-  width: 300px;
+  min-height: 450px;
+  width: 640px;
   text-align: center;
   margin: 0 auto;
   padding: 20px;
@@ -16,13 +16,11 @@
   color: #458B00;
 }
 .reg-input {
-  height: 20px;
-  padding: 5px;
-  margin: 10px;
+  width: 300px;
+  margin: 0 10px;
 }
-.reg-error {
-  color: #f00;
-  font-weight: 400;
+.reg-input-age {
+  width: 100px;
 }
 .reg-button:disabled {
   color: #aaa;
@@ -37,8 +35,32 @@
   background-color: #fff;
   font-weight: 600;
   color: #458B00;
-  border-radius: 25%;
   border: none;
-  width: 150px;
+  width: 170px;
   height: 35px;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #458B00;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 20px;
+}
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  background-color: transparent;
+  border-color: transparent;
+}
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  width: 300px;
+}
+.gender-age {
+  display: flex;
+  justify-content: space-around;
 }

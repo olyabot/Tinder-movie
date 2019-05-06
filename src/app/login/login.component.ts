@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
-import { User } from '../users';
+import { AuthenticationService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,18 @@ import { User } from '../users';
 
 export class LoginComponent implements OnInit {
 
-  users: User[];
-  userForm: FormGroup;
+  loginForm: FormGroup;
 
-  constructor () { }
+  constructor (
+    private formbilder: FormBuilder,
+    private router: Router,
+    private auth: AuthenticationService,
+  ) { }
 
   ngOnInit() {
 
-    this.userForm = new FormGroup({
-     login: new FormControl('', Validators.compose([
+    this.loginForm = this.formbilder.group({
+     email: new FormControl('', Validators.compose([
         Validators.required
       ])),
       password: new FormControl('', Validators.compose([
@@ -29,9 +33,28 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.userForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
   }
+
+  loginUser() {
+    console.log('Вхідні дані:' + JSON.stringify(this.loginForm.value))
+    this.auth.loginUser(JSON.stringify(this.loginForm.value))
+        .subscribe(
+            data => {
+                console.log(data);
+                console.log(data.token);
+                localStorage.setItem('token', data.token);
+                // this.router.navigate(['v1/user']);
+            },
+            err => console.log(err)
+        );
+  }
+
+  goToRegistration() {
+    this.router.navigate(['v1/auth/signup']);
+  }
+
 }
 
