@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
-import { Cities } from './city';
-import { CITIES } from './list-city';
+import { CITIES, CINEMAS } from './list-city';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CityService {
 
-  getCity(): Observable<Cities[]> {
-    return of(CITIES);
+  constructor() { }
+
+  getCities() {
+    return CITIES;
   }
 
-  constructor() { }
+  getCinemas() {
+   return CINEMAS;
+  }
 }

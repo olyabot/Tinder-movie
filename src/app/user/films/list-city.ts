@@ -1,89 +1,88 @@
-import { Cities } from './city';
+import { Cities, Cinemas } from './city';
 
 export const CITIES: Cities[] = [
-    {
-      city: 'ivano-frankovsk',
-      viewCity: 'Івано-Франківськ',
-      cinemas: ['liniakino-kosmos'],
-      viewCinema: ['Лінія кіно «Космос»']
-    },
-    {
-      city: 'vinnica',
-      viewCity: 'Вінниця',
-      cinemas: ['kocubinsky'],
-      viewCinema: ['Кінотеатр ім.М.Коцюбинського']
-    },
-    {
-      city: 'dnepropetrovsk',
-      viewCity: 'Дніпро',
-      cinemas: ['most-kino', 'mx-dnepr-dafi', 'mx-dnepr-karavan'],
-      viewCinema: ['Мост Кіно', 'Мультіплекс IMAX ТРЦ «Dafi Дніпро»', 'Мультіплекс ТРЦ «Караван Дніпро»']
-    },
-    {
-      city: 'zhitomir',
-      viewCity: 'Житомир',
-      cinemas: ['mx-zhitom-global', 'ukraina-zhitomir'],
-      viewCinema: ['Мультіплекс ТРЦ «Глобал UA»', 'Кінотеатр «Україна»']
-    },
-    {
-      city: 'zaporozhe',
-      viewCity: 'Запоріжжя',
-      cinemas: ['bayda', 'dovgenko-zaporoj', 'mx-zp-avrora'],
-      viewCinema: ['Байда кіно', 'Кінотеатр ім. Довженко', 'Мультіплекс ТРЦ «Аврора»']
-    },
-    {
-      city: 'kiev',
-      viewCity: 'Київ',
-      cinemas: ['atmasfera360-museum', 'atmasfera360-podol', 'atmasfera360-park', 'boomer', 'kievrus', 'rossia', 'kiev',
-      'leyptsig', 'leningrad', 'liniakino-aladdin', 'liniakino-magelan', 'liniakino-metropolis', 'lira', 'magnat', 'mx-kiev-comod', 'mx-kiev-lavinamall', 'mx-kiev-skymall', 'mx-kiev-atmosfera', 'mx-kiev-karavan', 'mx-kiev-prospect',
-      'kinoodessa-kvadrat', 'oskar', 'gulliver', 'shevchenko'],
-      viewCinema: ['Atmasfera 360 Науково-природничий музей', 'Atmasfera 360 на Подолі',
-      'Atmasfera 360 парк ім. Войнїв-інтернаціоналістів', 'Boomer', 'Київська Русь', 'Кіото (Росія)', 'Культурний центр "Кінотеатр "Київ"',
-      'Лейпціг', 'Ленінград', 'Лінія кіно у ТРЦ "Аладдін"', 'Лінія кіно у ТРЦ "Магеллан"', 'Лінія кіно у ТРЦ "Метрополіс"', 'Ліра', 'Магнат', 'Мультіплекс ТРЦ «Komod»', 'Мультіплекс ТРЦ «Lavina Mall»', 'Мультіплекс ТРЦ «SkyMall»', 'Мультіплекс ТРЦ «Атмосфера»', 'Мультіплекс ТРЦ «Караван Київ»', 'Мультіплекс ТРЦ «Проспект»',
-      'Одеса-кіно у ТРЦ "Квадрат"', 'Оскар в ТРЦ "Dream Town"', 'Оскар в ТРЦ "Gulliver"', 'ім.Т.Г. Шевченка']
-    },
-    {
-      city: 'krivojrog',
-      viewCity: 'Кривий Ріг',
-      cinemas: ['mx-krivrog-union', 'mx-krivrog-victory', 'olymp'],
-      viewCinema: ['Мультіплекс ТРЦ «Union»', 'Мультіплекс ТРЦ «Victory Plaza»', 'Кінотеатр «Олімп»']
-    },
-    {
-      city: 'lvov',
-      viewCity: 'Львів',
-      cinemas: ['filmcenter', 'kp-lvov', 'kp-kopernik', 'kp-dovjenko', 'mx-lviv-victoriagardens', 'pk-lvov2', 'pk-lvov'],
-      viewCinema: ['Lviv Film Center', 'Кінопалац', 'Кінопалац "Коперник"', 'Кінопалац ім. Довженка', 'Мультіплекс «Victoria Gardens»', 'Планета кіно (King Cross)', 'Планета кіно (Forum Lviv)']
+  { city: 'ivano-frankovsk', viewCity: 'Івано-Франківськ' },
+  { city: 'vinnica', viewCity: 'Вінниця' },
+  { city: 'dnepropetrovsk', viewCity: 'Дніпро' },
+  { city: 'zhitomir', viewCity: 'Житомир' },
+  { city: 'zaporozhe', viewCity: 'Запоріжжя' },
+  { city: 'kiev', viewCity: 'Київ' },
+  { city: 'krivojrog', viewCity: 'Кривий Ріг' },
+  { city: 'lvov', viewCity: 'Львів' },
+  { city: 'odessa', viewCity: 'Одеса' },
+  { city: 'poltava', viewCity: 'Полтава' },
+  { city: 'sumy', viewCity: 'Суми' },
+  { city: 'kherson', viewCity: 'Херсон' },
+  { city: 'cherkassy', viewCity: 'Черкаси' },
+];
 
-    },
-    {
-      city: 'odessa',
-      viewCity: 'Одеса',
-      cinemas: ['kinoodessa-kinostar', 'kinoodessa-moskva', 'pk-odessa', 'pk-odessa2', 'kinoodessa-rodina'],
-      viewCinema: ['Одесакіно Кіностар', 'Одесакіно Москва', 'Планета кіно (Котовського)', 'Планета кіно (Таирова)', 'Одесакіно Родина']
 
-    },
-    {
-      city: 'poltava',
-      viewCity: 'Полтава',
-      cinemas: ['mx-poltava-ekvator'],
-      viewCinema: ['Мультіплекс ТРЦ «Екватор»']
-    },
-    {
-      city: 'sumy',
-      viewCity: 'Суми',
-      cinemas: ['pk-sumy'],
-      viewCinema: ['Планета кіно']
-    },
-    {
-      city: 'kherson',
-      viewCity: 'Херсон',
-      cinemas: ['mx-herson-fab'],
-      viewCinema: ['Мультіплекс ТРЦ «Фабрика»']
-    },
-    {
-      city: 'cherkassy',
-      viewCity: 'Черкаси',
-      cinemas: ['mx-cher-lubava', 'mx-cher-dnipro', 'ukraina-cherkassy'],
-      viewCinema: ['Мультіплекс «Любава»', 'Мультіплекс ТРЦ «Дніпро Плаза»', 'Кінотеатр «Україна»']
-    },
+export const CINEMAS: Cinemas[] = [
+  { city: 'ivano-frankovsk', cinemas: 'liniakino-kosmos', viewCinema: 'Лінія кіно «Космос»' },
+
+  { city: 'vinnica', cinemas: 'kocubinsky', viewCinema: 'Кінотеатр ім.М.Коцюбинського' },
+
+  { city: 'dnepropetrovsk', cinemas: 'most-kino', viewCinema: 'Мост Кіно' },
+  { city: 'dnepropetrovsk', cinemas: 'mx-dnepr-dafi', viewCinema: 'Мультіплекс IMAX ТРЦ «Dafi Дніпро»' },
+  { city: 'dnepropetrovsk', cinemas: 'mx-dnepr-karavan', viewCinema: 'Мультіплекс ТРЦ «Караван Дніпро»' },
+
+  { city: 'zhitomir', cinemas: 'mx-zhitom-global', viewCinema: 'Мультіплекс ТРЦ «Глобал UA»' },
+  { city: 'zhitomir', cinemas: 'ukraina-zhitomir', viewCinema: 'Кінотеатр «Україна»' },
+
+  { city: 'zaporozhe', cinemas: 'bayda', viewCinema: 'Байда кіно' },
+  { city: 'zaporozhe', cinemas: 'dovgenko-zaporoj', viewCinema: 'Кінотеатр ім. Довженко' },
+  { city: 'zaporozhe', cinemas: 'mx-zp-avrora', viewCinema: 'Мультіплекс ТРЦ «Аврора»' },
+
+  { city: 'kiev', cinemas: 'atmasfera360-museum', viewCinema: 'Atmasfera 360 Науково-природничий музей' },
+  { city: 'kiev', cinemas: 'atmasfera360-podol', viewCinema: 'Atmasfera 360 на Подолі' },
+  { city: 'kiev', cinemas: 'atmasfera360-park', viewCinema: 'Atmasfera 360 парк ім. Войнїв-інтернаціоналістів' },
+  { city: 'kiev', cinemas: 'boomer', viewCinema: 'Boomer' },
+  { city: 'kiev', cinemas: 'kievrus', viewCinema: 'Київська Русь' },
+  { city: 'kiev', cinemas: 'rossia', viewCinema: 'Кіото (Росія)' },
+  { city: 'kiev', cinemas: 'kiev', viewCinema: 'Культурний центр "Кінотеатр "Київ"' },
+  { city: 'kiev', cinemas: 'leyptsig', viewCinema: 'Лейпціг' },
+  { city: 'kiev', cinemas: 'leningrad', viewCinema: 'Ленінград' },
+  { city: 'kiev', cinemas: 'liniakino-aladdin', viewCinema: 'Лінія кіно у ТРЦ "Аладдін"' },
+  { city: 'kiev', cinemas: 'liniakino-magelan', viewCinema: 'Лінія кіно у ТРЦ "Магеллан"' },
+  { city: 'kiev', cinemas: 'liniakino-metropolis', viewCinema: 'Лінія кіно у ТРЦ "Метрополіс"' },
+  { city: 'kiev', cinemas: 'lira', viewCinema: 'Ліра' },
+  { city: 'kiev', cinemas: 'magnat', viewCinema: 'Магнат' },
+  { city: 'kiev', cinemas: 'mx-kiev-comod', viewCinema: 'Мультіплекс ТРЦ «Komod»' },
+  { city: 'kiev', cinemas: 'mx-kiev-lavinamall', viewCinema: 'Мультіплекс ТРЦ «Lavina Mall»' },
+  { city: 'kiev', cinemas: 'mx-kiev-skymall', viewCinema: 'Мультіплекс ТРЦ «SkyMall»' },
+  { city: 'kiev', cinemas: 'mx-kiev-atmosfera', viewCinema: 'Мультіплекс ТРЦ «Атмосфера»' },
+  { city: 'kiev', cinemas: 'mx-kiev-karavan', viewCinema: 'Мультіплекс ТРЦ «Караван Київ»' },
+  { city: 'kiev', cinemas: 'mx-kiev-prospect', viewCinema: 'Мультіплекс ТРЦ «Проспект»' },
+  { city: 'kiev', cinemas: 'kinoodessa-kvadrat', viewCinema: 'Одеса-кіно у ТРЦ "Квадрат"' },
+  { city: 'kiev', cinemas: 'oskar', viewCinema: 'Оскар в ТРЦ "Dream Town"' },
+  { city: 'kiev', cinemas: 'gulliver', viewCinema: 'Оскар в ТРЦ "Gulliver"' },
+  { city: 'kiev', cinemas: 'shevchenko', viewCinema: 'ім.Т.Г. Шевченка' },
+
+  { city: 'krivojrog', cinemas: 'mx-krivrog-union', viewCinema: 'Мультіплекс ТРЦ «Union»' },
+  { city: 'krivojrog', cinemas: 'mx-krivrog-victory', viewCinema: 'Мультіплекс ТРЦ «Victory Plaza»' },
+  { city: 'krivojrog', cinemas: 'olymp', viewCinema: 'Кінотеатр «Олімп»' },
+
+  { city: 'lvov', cinemas: 'filmcenter', viewCinema: 'Lviv Film Center' },
+  { city: 'lvov', cinemas: 'kp-lvov', viewCinema: 'Кінопалац' },
+  { city: 'lvov', cinemas: 'kp-kopernik', viewCinema: 'Кінопалац "Коперник"' },
+  { city: 'lvov', cinemas: 'kp-dovjenko', viewCinema: 'Кінопалац ім. Довженка' },
+  { city: 'lvov', cinemas: 'mx-lviv-victoriagardens', viewCinema: 'Мультіплекс «Victoria Gardens»' },
+  { city: 'lvov', cinemas: 'pk-lvov2', viewCinema: 'Планета кіно (King Cross)' },
+  { city: 'lvov', cinemas: 'pk-lvov', viewCinema: 'Планета кіно (Forum Lviv)' },
+
+  { city: 'odessa', cinemas: 'kinoodessa-kinostar', viewCinema: 'Одесакіно Кіностар' },
+  { city: 'odessa', cinemas: 'kinoodessa-moskva', viewCinema: 'Одесакіно Москва' },
+  { city: 'odessa', cinemas: 'pk-odessa', viewCinema: 'Планета кіно (Котовського)' },
+  { city: 'odessa', cinemas: 'pk-odessa2', viewCinema: 'Планета кіно (Таирова)' },
+  { city: 'odessa', cinemas: 'kinoodessa-rodina', viewCinema: 'Одесакіно Родина' },
+
+  { city: 'poltava', cinemas: 'mx-poltava-ekvator', viewCinema: 'Мультіплекс ТРЦ «Екватор»' },
+
+  { city: 'sumy', cinemas: 'pk-sumy', viewCinema: 'Планета кіно' },
+
+  { city: 'kherson', cinemas: 'mx-herson-fab', viewCinema: 'Мультіплекс ТРЦ «Фабрика»' },
+
+  { city: 'cherkassy', cinemas: 'mx-cher-lubava', viewCinema: 'Мультіплекс «Любава»' },
+  { city: 'cherkassy', cinemas: 'mx-cher-dnipro', viewCinema: 'Мультіплекс ТРЦ «Дніпро Плаза»' },
+  { city: 'cherkassy', cinemas: 'ukraina-cherkassy', viewCinema: 'Кінотеатр «Україна»' },
 ];

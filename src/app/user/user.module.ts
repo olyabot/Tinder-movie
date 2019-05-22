@@ -14,7 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
     UserComponent,
     FilmsComponent,
     MessagesComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
