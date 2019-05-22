@@ -1,6 +1,14 @@
 export class Cities {
-    city: string;
-    viewCity: string;
-    cinemas: Array<string>;
-    viewCinema: Array<string>;
+  constructor(
+    public city: string,
+    public viewCity: string
+  ) {}
+}
+
+export class Cinemas {
+  constructor(
+    public city: string,
+    public cinemas: string,
+    public viewCinema: string
+  ) {}
 }

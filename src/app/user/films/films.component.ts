@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
-// import { CityService } from './city.service';
-import { CITIES } from './list-city';
-import { Cities } from './city';
+import { CityService } from './city.service';
+import { Cities, Cinemas } from './city';
 
 @Component({
   selector: 'app-films',
@@ -12,29 +11,30 @@ import { Cities } from './city';
 })
 export class FilmsComponent implements OnInit {
 
-  cityControl = new FormControl('', [Validators.required]);
-  cinemaControl = new FormControl('', [Validators.required]);
-
-  cityList: Array<any> = CITIES;
-
-  cinemas: Array<any>;
-
-  selectedCity: Cities;
-  selectedCinema: Cities["cinemas"];
+  cities: Cities[];
+  cinemas: Cinemas[];
+  
+  selectedCity: Cities = new Cities('','');
+  selectedCinema = this.cinemas;
 
   payLoad = '';
 
-  constructor() { }
+  cityControl = new FormControl('', [Validators.required]);
+  cinemaControl = new FormControl('', [Validators.required]);
+
+  constructor(private CityService: CityService) { }
 
   ngOnInit() {
+    this.cities = this.CityService.getCities();
+    this.changeCity(this.selectedCity.city);
   }
 
-  changeCity(count) {
-    this.cinemas = this.cityList.find(con => con.city == count).viewCinema;
+  changeCity(city) {
+    this.cinemas = this.CityService.getCinemas().filter((item) => item.city == city);
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.selectedCinema);
+    this.payLoad = JSON.stringify(`city=${this.selectedCity}&cinema=${this.selectedCinema}`);
   }
 }
 

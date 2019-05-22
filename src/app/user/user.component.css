@@ -1,3 +1,6 @@
+.users {
+  display: flex;
+}
 .user-profile {
   width: 30%;
   height: 100vh;
@@ -19,5 +22,37 @@
   padding: 10px;
   color: #006400;
 }
-
-
+.movies {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.movie-btn {
+  margin: 0 auto 5%;
+}
+.btn-like {
+  width: 150px;
+  background-color: #66CD00;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: none;
+}
+.btn-like:hover {
+  background-color: #00FF00;
+}
+.btn-dislike {
+  width: 150px;
+  background-color: #FA8072;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: none;
+}
+.btn-dislike:hover {
+  background-color: #FF0000;
+}
